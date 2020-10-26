@@ -1,0 +1,19 @@
+module.exports = {
+	publicPath:'./',
+	devServer:{
+		open:true,
+		host:'0.0.0.0',
+		port:'8080',
+		proxy:{
+			'/api':{
+				target:'http://192.168.0.101:3000/api/',
+				changeOrigin:true,
+				pathRewrite:{
+					'^/api':''
+				}
+			}
+		}
+	}
+}
+//http://114.215.173.225:3000/api/v1/category/categorylist/858
+//http://39.101.210.136:3000/api/
